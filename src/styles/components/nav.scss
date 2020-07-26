@@ -1,0 +1,22 @@
+.header {
+	background-color: $primary;
+	padding: 15px;
+}
+
+.nav {
+	&__link {
+		color: $white;
+		border-radius: $border-radius;
+		padding: 5px 12px;
+		transition: 0.3s background-color;
+		&:focus {
+			outline: none;
+		}
+		&:hover {
+			background-color: rgba($color: $black, $alpha: 0.1);
+		}
+	}
+}
+.router-link-exact-active {
+	background-color: rgba($color: $white, $alpha: 0.1);
+}

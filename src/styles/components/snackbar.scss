@@ -1,0 +1,39 @@
+.snackbar {
+	position: fixed;
+	z-index: 101;
+	right: 0;
+	bottom: 25px;
+	left: 0;
+	display: flex;
+	justify-content: center;
+	&__body {
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		min-width: 250px;
+		padding: 15px 18px;
+		color: $white;
+		border-radius: $border-radius;
+		background-color: $error;
+	}
+	&__btn {
+		font-size: 14px;
+		font-weight: 600;
+		margin-left: 20px;
+		cursor: pointer;
+		text-transform: uppercase;
+		&:hover {
+			color: $black;
+		}
+	}
+}
+@keyframes fade-in {
+	from {
+		transform: translateX(-50px);
+		opacity: 0;
+	}
+	to {
+		transform: translateX(0);
+		opacity: 1;
+	}
+}

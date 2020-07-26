@@ -1,0 +1,14 @@
+.post {
+	flex: 1;
+	padding: 35px;
+	&__title {
+		margin-bottom: 40px;
+	}
+
+	&__comments {
+		margin-top: 50px;
+	}
+	&__body {
+		max-width: 600px;
+	}
+}

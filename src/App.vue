@@ -1,32 +1,46 @@
 <template>
-  <div id="app">
-    <div id="nav">
-      <router-link to="/">Home</router-link> |
-      <router-link to="/about">About</router-link>
-    </div>
-    <router-view/>
-  </div>
+	<div id="app">
+		<header
+			class="header"
+			v-if="this.$route.name !== 'Login' && this.$route.name !== '404'"
+		>
+			<nav class="wrap nav">
+				<router-link class="nav__link" to="/">Home</router-link>
+				<router-link class="nav__link" to="/user/current">User</router-link>
+				<a class="nav__link" href="javascript:void(0)" @click="logout"
+					>Logout
+				</a>
+			</nav>
+		</header>
+		<Loader v-show="loader" />
+
+		<main class="container" v-show="!loader">
+			<router-view />
+		</main>
+		<Snackbar />
+	</div>
 </template>
+<script>
+import { Snackbar, Loader } from "@/components";
+import { mapState } from "vuex";
 
+export default {
+	components: { Snackbar, Loader },
+	computed: mapState(["loader"]),
+	created: function() {
+		const user = localStorage.user;
+		if (user) this.$store.commit("updateUser", JSON.parse(user));
+		this.$store.dispatch("getUsers");
+	},
+
+	methods: {
+		logout() {
+			this.$router.push("/login");
+			this.$store.commit("removeUser");
+		},
+	},
+};
+</script>
 <style lang="scss">
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-}
-
-#nav {
-  padding: 30px;
-
-  a {
-    font-weight: bold;
-    color: #2c3e50;
-
-    &.router-link-exact-active {
-      color: #42b983;
-    }
-  }
-}
+@import "~@/styles/main";
 </style>

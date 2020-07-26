@@ -1,0 +1,26 @@
+.container {
+	display: flex;
+	flex: 1 0 auto;
+	width: 100%;
+}
+.wrap,
+.container {
+	@include min-max(320px, 1200px, 15px);
+}
+.text_primary {
+	color: $primary;
+}
+.text_white {
+	color: $white;
+}
+.text_black {
+	color: $black;
+}
+.text-decoration_line-through {
+	text-decoration: line-through;
+	color: rgba($black, 0.4);
+}
+
+.bg-color_transparent {
+	background-color: transparent;
+}

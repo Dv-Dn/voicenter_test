@@ -1,0 +1,29 @@
+.post-card {
+	border-radius: $border-radius;
+	box-shadow: $box-shadow;
+	display: flex;
+	padding: 20px;
+	flex-direction: column;
+	justify-content: space-between;
+	&__text {
+		margin: 15px 0;
+		@include rows-count(3, 25px);
+	}
+	&__title {
+		color: $black;
+		transition: color 0.3s;
+		@include rows-count(2, 35px);
+
+		&:hover {
+			color: $primary;
+		}
+	}
+	&__author {
+		color: $black;
+		text-decoration: underline;
+		transition: 0.3s;
+		&:hover {
+			color: $primary;
+		}
+	}
+}

@@ -1,0 +1,31 @@
+.comment {
+	margin-top: 20px;
+	margin-bottom: 20px;
+	padding: 10px;
+	color: $white;
+	border-radius: $border-radius;
+	background-color: $primary;
+	box-shadow: $box-shadow;
+
+	// @extend %mx-auto;
+
+	@include respond-to(md) {
+		max-width: 85%;
+	}
+	&__name,
+	&__body,
+	&__email {
+		padding: 8px;
+	}
+	&__name {
+		font-size: 18px;
+		font-weight: 700;
+	}
+	&__body {
+		font-weight: 600;
+		color: hsla(0, 0%, 100%, 0.7);
+	}
+	&__email {
+		text-align: right;
+	}
+}

@@ -1,0 +1,42 @@
+html {
+  font-family: 'Roboto', sans-serif;
+  font-size: 16px;
+  color: $black;
+
+  text-rendering: optimizeLegibility;
+}
+
+#app {
+  position: relative;
+  display: flex;
+  flex: 1 1 auto;
+  flex-direction: column;
+  max-width: 100%;
+  min-height: 100vh;
+
+  -webkit-backface-visibility: hidden;
+          backface-visibility: hidden;
+}
+h2 {
+  font-size: 30px;
+  font-weight: 400;
+  letter-spacing: 1.1px;
+
+@include respond-to(md) {
+    font-size: 48px;
+  }
+}
+h3 {
+  font-size: 22px;
+  font-weight: bold;
+  letter-spacing: .3px;
+
+@include respond-to(md) {
+    font-size: 32px;
+    letter-spacing: .63px;
+  }
+}
+p {
+  line-height: 25px;
+  letter-spacing: .25px;
+}

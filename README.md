@@ -1,5 +1,8 @@
-# vue_voicenter_test
 
+
+# vue_voicenter_test
+# deploy
+https://voicenter-test.web.app/login
 ## Project setup
 ```
 yarn install

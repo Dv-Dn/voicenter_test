@@ -3,6 +3,10 @@
 		<div class="form">
 			<h3 class="form__title">Login</h3>
 			<TextField type="email" v-model="input" label="Emal" />
+			<p class="form__help">
+				<span class="text_bold">Try one of this:</span> Sincere@april.biz ,
+				Shanna@melissa.tv, Nathan@yesenia.net
+			</p>
 			<Button @click="submit">Submit</Button>
 		</div>
 	</div>
